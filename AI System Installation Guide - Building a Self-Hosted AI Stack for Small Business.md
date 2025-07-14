@@ -33,7 +33,7 @@ This AI system is designed as a **modular, self-contained platform** that includ
 - **Nginx**: Acts as a reverse proxy for professional deployment
 
 The architecture follows security best practices by creating dedicated Linux user accounts for each service, ensuring proper isolation and making maintenance straightforward.
-![Linux user accounts for each service](.\users.jpg)
+![User Management](https://raw.githubusercontent.com/kennychlim/canyouai/main/users.jpg)
 <p style="text-align:center;">Linux user accounts for each service</p>
 
 
@@ -993,7 +993,7 @@ python main.py --listen 0.0.0.0 --port 8188 --enable-cors-header --use-split-cro
 
 After starting ComfyUI, access the interface at: `http://your-server-ip:8188`
 
-![golden Chinese dragon walking through the clouds, surrounded by golden mountains, gold coins and gold ingots, shining, and cash cows.](.\golden_dragon.jpg)
+![Golden Dragon](https://raw.githubusercontent.com/kennychlim/canyouai/main/golden_dragon.jpg)
 <p style="text-align:center;">Image generation prompt: In the blue sky, there is a golden Chinese dragon walking through the clouds, surrounded by golden mountains, gold coins and gold ingots, shining, and cash cows</p>
 
 ## System Access and Credentials
@@ -1129,7 +1129,7 @@ iotop
 
 ### Port Troubleshooting Commands for Ubuntu 24.04 LTS
 
-Since Ubuntu 24.04 LTS no longer includes `netstat` by default, use these modern alternatives[^1][^2][^3]:
+Since Ubuntu 24.04 LTS no longer includes `netstat` by default, use these modern alternatives:
 
 #### Using `ss` Command (Modern netstat replacement)
 
@@ -1226,7 +1226,8 @@ sudo smartctl -a /dev/sda
 
 **System Monitoring Dashboard Analysis**
 
-![System Monitoring Dashboard Analysis](.\AI-MemoryUsages.jpg)<p style="text-align:center;">System Monitoring Dashboard Analysis</p>
+![AI Memory Usage](https://raw.githubusercontent.com/kennychlim/canyouai/main/AI-MemoryUsage.jpg)
+<p style="text-align:center;">System Monitoring Dashboard Analysis</p>
 
 ### Top Right Corner - Dual NVIDIA GPU Resources Utilization
 
