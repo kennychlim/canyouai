@@ -33,6 +33,9 @@ This AI system is designed as a **modular, self-contained platform** that includ
 - **Nginx**: Acts as a reverse proxy for professional deployment
 
 The architecture follows security best practices by creating dedicated Linux user accounts for each service, ensuring proper isolation and making maintenance straightforward.
+![Linux user accounts for each service](.\users.jpg)
+<p style="text-align:center;">Linux user accounts for each service</p>
+
 
 ## Hardware Requirements
 
@@ -66,9 +69,7 @@ After complete installation with all models downloaded, the actual storage usage
 
 ```bash
 df -BG
-```
 
-```
 Filesystem                                                                                   1G-blocks  Used Available Use% Mounted on
 tmpfs                                                                                               2G    1G        2G   1% /run
 /dev/mapper/ubuntu--vg-vg--root                                                                  1633G    7G     1543G   1% /
@@ -81,7 +82,6 @@ tmpfs                                                                           
 /dev/mapper/ubuntu--vg-vg--var                                                                   1007G   15G      942G   2% /var
 tmpfs                                                                                               2G    1G        2G   1% /run/user
 ```
-
 
 ## Operating System: Ubuntu Server 24.04 LTS Installation
 
@@ -993,6 +993,9 @@ python main.py --listen 0.0.0.0 --port 8188 --enable-cors-header --use-split-cro
 
 After starting ComfyUI, access the interface at: `http://your-server-ip:8188`
 
+![golden Chinese dragon walking through the clouds, surrounded by golden mountains, gold coins and gold ingots, shining, and cash cows.](.\golden_dragon.jpg)
+<p style="text-align:center;">Image generation prompt: In the blue sky, there is a golden Chinese dragon walking through the clouds, surrounded by golden mountains, gold coins and gold ingots, shining, and cash cows</p>
+
 ## System Access and Credentials
 
 ### Public Access
@@ -1221,6 +1224,61 @@ sudo smartctl -a /dev/sda
 - Store user data in `/var/*/data/`
 - Regular cleanup of temporary files
 
+**System Monitoring Dashboard Analysis**
+
+![System Monitoring Dashboard Analysis](.\AI-MemoryUsages.jpg)<p style="text-align:center;">System Monitoring Dashboard Analysis</p>
+
+### Top Right Corner - Dual NVIDIA GPU Resources Utilization
+
+The top right corner displays the **Ollama process status** showing multiple AI models running simultaneously. This section reveals:
+
+- **Active Models**: Several AI models are loaded and running in memory, including "hf.co/unsloth/DeepSeek-R1-0528-Qwen3-8B-GGUF" and "deepseek-r1:8b-0528-qwen3-q8_0"
+- **VRAM Usage**: Each model shows its memory consumption (ranging from 1.7GB to 10GB per model)
+- **GPU Assignment**: The models are distributed across your dual GPU setup, with each GPU having 22GB of VRAM capacity
+- **Status Indicators**: All models show "100% GPU" utilization and "Forever" duration, indicating they're persistently loaded in memory
+
+This display essentially shows you which AI models are currently active and how much of your total 44GB VRAM (2 × 22GB) is being consumed by each model.
+
+### Top Left Corner - Ollama Model Load Status
+
+The top left section shows the **nvidia-smi output**, which provides real-time GPU monitoring information:
+
+- **GPU Configuration**: Displays both NVIDIA GeForce RTX 2080 Ti GPUs with their memory specifications (20832/22528 MB and 22040/22528 MB)
+- **GPU Utilization**: Shows the percentage of GPU compute power being used for AI inference
+- **Memory Allocation**: Tracks how much VRAM is occupied versus available on each GPU
+- **Temperature and Power**: Monitors thermal performance and power consumption to ensure safe operation
+
+This section acts as your "GPU dashboard," giving you immediate visibility into how your hardware is performing under AI workload.
+
+### Middle Screen - Glances System Monitoring Tool Analysis
+
+The main screen shows **Glances**, a comprehensive system monitoring tool that provides a holistic view of your canyouai.com server's performance:
+
+**System Overview**:
+
+- **CPU Usage**: Shows 31.8% utilization with detailed breakdown of user, system, and idle time
+- **Memory Status**: Displays 89.2% memory usage (13.8G used out of 15.5G total)
+- **Swap Usage**: Shows 70.7% swap utilization, indicating the system is using disk storage as extended memory
+
+**Detailed Metrics**:
+
+- **Network Activity**: Monitors data transmission rates and network interface performance
+- **Disk I/O**: Tracks storage device read/write operations and utilization
+- **Process List**: Shows running applications, their resource consumption, and system impact
+- **File System**: Displays disk space usage across different storage volumes
+
+**Performance Indicators**:
+
+- **Load Average**: Shows system workload over time (1.24 for 1-minute average)
+- **Active Processes**: Lists all running programs with their memory and CPU usage
+- **System Uptime**: Indicates how long the server has been running continuously
+
+
+## Key Insights for Your AI Setup
+
+Your monitoring setup reveals a **high-performance AI inference server** running multiple large language models simultaneously. The 89.2% memory usage and 70.7% swap utilization suggest your system is operating near capacity, which is typical for AI workloads. The dual GPU configuration with 44GB total VRAM allows you to run multiple models concurrently, with Ollama intelligently distributing the workload across both GPUs.
+
+The persistent model loading (showing "Forever" duration) indicates optimized configuration for continuous AI inference, avoiding the performance penalty of repeatedly loading models from storage. This setup is ideal for production AI services where response time is critical.
 
 ## Future Enhancements
 
