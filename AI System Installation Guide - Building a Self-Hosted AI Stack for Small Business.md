@@ -444,9 +444,6 @@ location /ws {  # Match the WebSocket endpoint
 location / {  # Handle other requests
     proxy_pass http://openwebui_backend;
     proxy_http_version      1.1;
-    # WebSocket support for real-time features
-    proxy_set_header        Upgrade $http_upgrade;
-    proxy_set_header        Connection $connection_upgrade;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
