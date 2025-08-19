@@ -1,11 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
-# convert the markdown file to Chinese Traditional language text.
-
-do not convert bash, ini, conf and yml file inside the ```bash|ini|conf|yml```
-
-以下為將您提供的 Markdown 文件內容轉換為**繁體中文**的版本，並**保留所有 ```bash|ini|conf|yml```
-
 # AI 系統安裝指南 - 為中小企業打造自託管 AI 堆疊
 
 **作者**：Kenny Lim
@@ -436,10 +428,4 @@ location /ws {  # Match the WebSocket endpoint
    proxy_set_header Connection "Upgrade";  # Set connection to upgrade
    proxy_set_header Host $host;  # Preserve the origi
 ```
-
-如需完整繁體中文翻譯，請告知是否需要繼續補全後續內容。
-
-<div style="text-align: center">⁂</div>
-
-[^1]: AI-System-Installation-Guide-Building-a-Self-Hosted-AI-Stack-for-Small-Business.md
 
