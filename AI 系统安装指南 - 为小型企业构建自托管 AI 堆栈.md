@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
 # AI 系统安装指南 - 为小型企业构建自托管 AI 堆栈
 
 **作者**: Kenny Lim
@@ -427,8 +425,4 @@ location /ws {  # Match the WebSocket endpoint
    proxy_set_header Connection "Upgrade";  # Set connection to upgrade
    proxy_set_header Host $host;  # Preserve the origi
 ```
-
-<div style="text-align: center">⁂</div>
-
-[^1]: AI-System-Installation-Guide-Building-a-Self-Hosted-AI-Stack-for-Small-Business.md
 
