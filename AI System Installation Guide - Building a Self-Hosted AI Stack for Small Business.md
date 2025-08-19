@@ -1223,7 +1223,7 @@ sudo smartctl -a /dev/sda
 
 **System Monitoring Dashboard Analysis**
 
-![AI Memory Usage](https://raw.githubusercontent.com/kennychlim/canyouai/main/AI-MemoryUsage.jpg)
+![AI Memory Usage](https://raw.githubusercontent.com/kennychlim/canyouai/main/AI-MemoryUsages.jpg)
 <p style="text-align:center;">System Monitoring Dashboard Analysis</p>
 
 ### Top Right Corner - Dual NVIDIA GPU Resources Utilization
@@ -1340,3 +1340,4 @@ Remember: You don't need an MBA or PhD to work with AI projects - you just need 
 - **GPU1**: 20.5GB VRAM for image generation
 
 This represents a complete, production-ready AI system built with open-source tools and modest hardware investments. Enjoy your new local AI capabilities!
+
